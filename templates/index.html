@@ -78,11 +78,15 @@
     </style>
 </head>
 <body>
-    <form action="/" method="post">
+    <form action="/prediction" method="post">
         <p>Enter Sing to USD exchange rate:</p>
         <p><input type="number" step="0.01" name="rates" required></p>
         <p><input type="submit" value="Submit"></p>
     </form>
-    <p>The predicted DBS share price is {{result}}</p>
+
+    <form action="/genAI" method="post">
+        <p><input type="submit" value="Generative AI"></p>
+    </form>
+    
 </body>
 </html>
