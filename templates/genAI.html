@@ -5,41 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DBS Share Price Prediction</title>
     <style>
+        /* CSS code from above */
         /* General styles */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f9;
         }
 
-        .container {
-            text-align: center;
+        form {
             max-width: 500px;
-            width: 100%;
+            margin: 0 auto;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
         }
 
-        .box {
-            margin-bottom: 20px;
-            padding: 20px;
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-
-        h4 {
-            margin: 0;
-            font-size: 24px;
-            color: #333;
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
         input[type="submit"] {
@@ -58,33 +46,42 @@
 
         /* Media queries for tablets */
         @media screen and (max-width: 768px) {
-            h4 {
-                font-size: 20px;
+            form {
+                padding: 15px;
+                border: none;
+                box-shadow: none;
+            }
+
+            input[type="number"],
+            input[type="submit"] {
+                padding: 8px;
             }
         }
 
         /* Media queries for phones */
         @media screen and (max-width: 480px) {
-            .box {
-                padding: 15px;
+            form {
+                padding: 10px;
+                border: none;
+                box-shadow: none;
             }
 
-            h4 {
-                font-size: 18px;
+            input[type="number"],
+            input[type="submit"] {
+                padding: 6px;
+            }
+
+            p {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-            <h4>Predicted value is {{r}}</h4>
-        </div>
-        <form action="/" method="post">
-            <p><input type="submit" value="Main"></p>
-        </form>
-    </div>
+    <form action="/genAI_reply" method="post">
+        <p>Question : </p>
+        <p><input type="text" name="q" required></p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
 </body>
 </html>
-
-
